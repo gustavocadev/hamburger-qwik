@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Animated hamburger menu icons for Qwik",
   "repository": "gustavocadev/hamburger-qwik",
-  "author": "gustavocadev",
+  "author": {
+    "name": "gustavocadev",
+    "email": "gustavocadev@gmail.com"
+  },
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",
