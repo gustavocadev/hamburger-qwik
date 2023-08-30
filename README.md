@@ -1,47 +1,70 @@
-# Qwik Library ⚡️
+<p>‌</p>
+<p align="center">
+  <img alt="Preview" src="https://raw.githubusercontent.com/cyntler/hamburger-react/master/docs/static/preview.gif" height="96" width="640">
+</p>
+<p>‌</p>
+<p align="center">
+<h1 align="center">Animated hamburger menu icons for Qwik</h1>
+</p>
+<p align="center">
+<a href="https://hamburger-qwik.netlify.app">Hamburger menu icons</a> for Qwik, with CSS-driven transitions. Created to be as elegant and performant as possible. This means no JavaScript animations, no transitions on non-cheap properties and a small size.
+</p>
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik on GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-- [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
+## Installation
 
----
-
-## Project Structure
-
-Inside your project, you'll see the following directories and files:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── index.ts
+```sh
+pnpm add hamburger-qwik
 ```
 
-- `src/components`: Recommended directory for components.
+or
 
-- `index.ts`: The entry point of your component library, make sure all the public components are exported from this file.
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). For Qwik during development, the `dev` command will also server-side render (SSR) the output. The client-side development modules are loaded by the browser.
-
-```
-pnpm dev
+```sh
+npm install hamburger-qwik
 ```
 
-> Note: during dev mode, Vite will request many JS files, which does not represent a Qwik production build.
+## Size
 
-## Production
+When using one hamburger, ~1.5 KB will be added to your bundle (min + gzip).
 
-The production build should generate the production build of your component library in (./lib) and the typescript type definitions in (./lib-types).
+## Usage
 
+[Visit the website](https://hamburger-qwik.netlify.app) for full documentation, API and examples. A basic implementation looks as follows:
+
+```js
+import Hamburger from 'hamburger-qwik';
 ```
-pnpm build
+
+```js
+const isOpen = useSignal(false);
 ```
+
+```jsx
+<Hamburger toggle={isOpen} />
+```
+
+Or without providing your own state:
+
+```jsx
+<Hamburger onToggle$={toggled => ...} />
+```
+
+## Yet another hamburger library?
+
+Yes. Since the creation of these burgers in 2015 a lot of similar ones have appeared, with one or more of the following downsides:
+
+- Animations that don't feel natural
+- Transitions on expensive properties (jerky animations)
+- No Qwik support
+- Size (additional dependencies besides Qwik or no tree shaking)
+- Not customizable, or too customizable (no sensible defaults)
+- Doing too much
+
+## Accessibility
+
+It is recommended to have a tap/click area of at least 48x48 pixels. Therefore, padding will be added around the icon to create a surface of exactly this size.
+
+Keyboard interaction is provided with the `enter` key, and the icon element has the recommended accessibility attributes (such as `role`). You can use the `label` property to supply an ARIA label for the icon.
+
+## Support
+
+The icons are hooks-based, and will work with Qwik 1.0.0 ('the one with hooks') or higher.
