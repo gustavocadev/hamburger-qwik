@@ -1,7 +1,9 @@
 {
-  "name": "my-qwik-library-name",
-  "version": "0.0.1",
-  "description": "Create a reusable Qwik component library",
+  "name": "hamburger-qwik",
+  "version": "0.0.0",
+  "description": "Animated hamburger menu icons for Qwik",
+  "repository": "gustavocadev/hamburger-qwik",
+  "author": "gustavocadev",
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",
@@ -30,6 +32,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "release": "changeset publish",
     "start": "vite --open --mode ssr",
     "test": "echo \"No test specified\" && exit 0",
     "prepublishOnly": "qwik build",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "@builder.io/qwik": "1.2.10",
+    "@changesets/cli": "^2.26.2",
     "@types/eslint": "8.44.1",
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "6.2.0",
