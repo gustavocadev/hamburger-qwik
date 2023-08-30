@@ -10,6 +10,8 @@
 <a href="https://hamburger-qwik.netlify.app">Hamburger menu icons</a> for Qwik, with CSS-driven transitions. Created to be as elegant and performant as possible. This means no JavaScript animations, no transitions on non-cheap properties and a small size.
 </p>
 
+This package is a port of [hamburger-react](https://github.com/cyntler/hamburger-react).
+
 ## Installation
 
 ```sh
