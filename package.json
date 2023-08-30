@@ -30,9 +30,9 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "release": "np",
     "start": "vite --open --mode ssr",
     "test": "echo \"No test specified\" && exit 0",
+    "prepublishOnly": "qwik build",
     "qwik": "qwik"
   },
   "devDependencies": {
@@ -43,7 +43,6 @@
     "@typescript-eslint/parser": "6.2.0",
     "eslint": "8.45.0",
     "eslint-plugin-qwik": "latest",
-    "np": "7.6.1",
     "prettier": "3.0.0",
     "typescript": "5.1.6",
     "undici": "5.22.1",
