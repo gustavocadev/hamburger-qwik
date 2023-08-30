@@ -1,0 +1,102 @@
+import type { CommonBurgerProps } from '..';
+import { Burger } from './Burger';
+import { component$, useSignal } from '@builder.io/qwik';
+
+export const Twirl = component$<CommonBurgerProps>((props) => {
+  const toggleInternal = useSignal(false);
+
+  return (
+    <Burger {...props} toggleInternal={toggleInternal}>
+      {(o) => (
+        <div
+          class="hamburger-react"
+          aria-label={o.label}
+          aria-expanded={o.isToggled}
+          data-testid="twirl"
+          onClick$={o.handler}
+          onKeyUp$={(e) => e.key === 'Enter' && o.handler()}
+          role="button"
+          style={{
+            ...o.burgerStyles,
+            transform: `${
+              o.isToggled ? `rotate(${90 * (o.isLeft ? -1 : 1)}deg)` : 'none'
+            }`,
+          }}
+          tabIndex={0}
+        >
+          <div
+            style={{
+              transition: `${o.time / 2}s ${o.easing} ${
+                o.isToggled ? '0s' : `${o.time / 2}s`
+              }`,
+              transform: `${
+                o.isToggled ? `translateY(${o.barHeight + o.margin}px)` : 'none'
+              }`,
+            }}
+          >
+            <div
+              style={{
+                ...o.barStyles,
+                width: `${o.width}px`,
+                top: `${o.topOffset}px`,
+                transition: `${o.time / 2}s ${o.easing} ${
+                  o.isToggled ? `${o.time / 2}s` : '0s'
+                }`,
+                transform: `${
+                  o.isToggled
+                    ? `rotate(${45 * (o.isLeft ? 1 : -1)}deg)`
+                    : 'none'
+                }`,
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              transition: `${o.time / 2}s ${o.easing}`,
+              opacity: `${o.isToggled ? '0' : '1'}`,
+            }}
+          >
+            <div
+              style={{
+                ...o.barStyles,
+                width: `${o.width}px`,
+                top: `${o.topOffset + o.barHeight + o.margin}px`,
+                transition: `${o.time / 2}s ${o.easing}`,
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              transition: `${o.time / 2}s ${o.easing} ${
+                o.isToggled ? '0s' : `${o.time / 2}s`
+              }`,
+              transform: `${
+                o.isToggled
+                  ? `translateY(-${o.barHeight + o.margin}px)`
+                  : 'none'
+              }`,
+            }}
+          >
+            <div
+              style={{
+                ...o.barStyles,
+                width: `${o.width}px`,
+                top: `${o.topOffset + o.barHeight * 2 + o.margin * 2}px`,
+                transition: `${o.time / 2}s ${o.easing} ${
+                  o.isToggled ? `${o.time / 2}s` : '0s'
+                }`,
+                transform: `${
+                  o.isToggled
+                    ? `rotate(${45 * (o.isLeft ? -1 : 1)}deg)`
+                    : 'none'
+                }`,
+              }}
+            />
+          </div>
+        </div>
+      )}
+    </Burger>
+  );
+});
