@@ -80,7 +80,9 @@ export const Burger = ({
   const handler = $(() => {
     toggleFunction.value = !isToggled;
 
-    if (typeof onToggle$ === 'function') onToggle$(!isToggled);
+    if (typeof onToggle$ === 'function') {
+      onToggle$(!isToggled);
+    }
   });
 
   return children({
