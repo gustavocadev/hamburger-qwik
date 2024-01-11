@@ -56,7 +56,9 @@ export interface CommonBurgerProps {
   /** An ARIA label to improve accessibility. */
   label?: string;
   /** A callback which receives a single boolean argument, indicating if the icon is toggled. */
-  onToggle$?: PropFunction<(toggled: boolean) => any>;
+  onToggle$?:
+    | PropFunction<(toggled: boolean) => void>
+    | ((toggled: boolean) => void);
   /** Specifies if the icon bars should be rounded. */
   rounded?: boolean;
   /** A number between 12 and 48, which sets the size of the icon. */
