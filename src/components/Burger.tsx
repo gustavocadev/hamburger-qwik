@@ -1,5 +1,5 @@
-import { $, CSSProperties } from '@builder.io/qwik';
-import type { BurgerProps } from '..';
+import { $, type CSSProperties } from '@builder.io/qwik';
+import type { BurgerProps } from '../';
 import type { JSX } from '@builder.io/qwik/jsx-runtime';
 
 const area = 48;
@@ -21,7 +21,6 @@ export const Burger = ({
 }: BurgerProps): JSX.Element => {
   const width = Math.max(12, Math.min(area, size));
   const room = Math.round((area - width) / 2);
-
   const barHeightRaw = width / 12;
   const barHeight = Math.round(barHeightRaw);
 
@@ -48,7 +47,6 @@ export const Burger = ({
     (barHeightRaw - barHeight + (marginRaw - margin)) / (lines === 3 ? 1 : 2);
   const move = parseFloat((width / translate - deviation / (4 / 3)).toFixed(2));
   const time = Math.max(0, duration);
-
   const burgerStyles: CSSProperties = {
     cursor: 'pointer',
     height: `${area}px`,
