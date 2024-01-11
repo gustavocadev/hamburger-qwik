@@ -1,5 +1,12 @@
 # hamburger-qwik
 
+## 0.1.2
+
+### Patch Changes
+
+- 68e97cc: Update Vite to v5.0.11
+- 68e97cc: Update qwik to 1.3.4 version
+
 ## 0.1.1
 
 ### Patch Changes
