@@ -1,5 +1,11 @@
 # hamburger-qwik
 
+## 0.1.3
+
+### Patch Changes
+
+- bc8f2c2: Fix onToggle$ type
+
 ## 0.1.2
 
 ### Patch Changes
