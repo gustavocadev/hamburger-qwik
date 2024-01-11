@@ -1,19 +1,19 @@
 import { Tilt as Hamburger } from './components/Tilt';
 import type { JSX } from '@builder.io/qwik/jsx-runtime';
 
-import { Cross } from './components/Cross';
-import { Divide } from './components/Divide';
-import { Fade } from './components/Fade';
-import { Pivot } from './components/Pivot';
-import { Rotate } from './components/Rotate';
-import { Slant } from './components/Slant';
-import { Sling } from './components/Sling';
-import { Spin } from './components/Spin';
-import { Spiral } from './components/Spiral';
-import { Squash } from './components/Squash';
-import { Squeeze } from './components/Squeeze';
-import { Turn } from './components/Turn';
-import { Twirl } from './components/Twirl';
+export { Cross } from './components/Cross';
+export { Divide } from './components/Divide';
+export { Fade } from './components/Fade';
+export { Pivot } from './components/Pivot';
+export { Rotate } from './components/Rotate';
+export { Slant } from './components/Slant';
+export { Sling } from './components/Sling';
+export { Spin } from './components/Spin';
+export { Spiral } from './components/Spiral';
+export { Squash } from './components/Squash';
+export { Squeeze } from './components/Squeeze';
+export { Turn } from './components/Turn';
+export { Twirl } from './components/Twirl';
 
 import type {
   CSSProperties,
@@ -23,22 +23,6 @@ import type {
 } from '@builder.io/qwik';
 
 export default Hamburger;
-
-export {
-  Cross,
-  Divide,
-  Fade,
-  Pivot,
-  Rotate,
-  Slant,
-  Sling,
-  Spin,
-  Spiral,
-  Squash,
-  Squeeze,
-  Turn,
-  Twirl,
-};
 
 export interface CommonBurgerProps {
   /** The color of the icon bars, accepts any CSS-parsable argument. */
