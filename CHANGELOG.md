@@ -1,5 +1,12 @@
 # hamburger-qwik
 
+## 0.2.0
+
+### Minor Changes
+
+- 86d0596: Update release github action workflow
+- e70fe80: Update deps
+
 ## 0.1.3
 
 ### Patch Changes
