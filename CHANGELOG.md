@@ -1,5 +1,11 @@
 # hamburger-qwik
 
+## 0.2.1
+
+### Patch Changes
+
+- a5e519c: fix: Update meta charset in root.tsx
+
 ## 0.2.0
 
 ### Minor Changes
